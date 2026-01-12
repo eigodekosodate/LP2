@@ -1,0 +1,753 @@
+/* ========================================
+   Reset & Base Styles
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #5D4037;
+    background-color: #FFF9F5;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ========================================
+   Typography
+======================================== */
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+/* ========================================
+   Container
+======================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ========================================
+   Section Headers
+======================================== */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    margin-bottom: 16px;
+    color: #5D4037;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #8D6E63;
+    font-weight: 300;
+}
+
+/* ========================================
+   Hero Section
+======================================== */
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 154, 139, 0.15) 0%, rgba(255, 106, 136, 0.15) 100%),
+        url('hero_clean.png') center/cover no-repeat;
+    color: #fff;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+    max-width: 900px;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.02em;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    margin-bottom: 48px;
+    font-weight: 300;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    line-height: 1.8;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 18px 48px;
+    background: linear-gradient(135deg, #FF9A8B 0%, #FF6A88 100%);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 24px rgba(255, 106, 136, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(255, 106, 136, 0.5);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.scroll-indicator span {
+    display: block;
+    width: 24px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    position: relative;
+}
+
+.scroll-indicator span::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 2px;
+    animation: scroll-down 2s infinite;
+}
+
+@keyframes scroll-down {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(12px);
+    }
+}
+
+/* ========================================
+   Fade In Animations
+======================================== */
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+.fade-in-delay-1 {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out 0.3s forwards;
+}
+
+.fade-in-delay-2 {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out 0.6s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   Empathy Section
+======================================== */
+
+.empathy-section {
+    padding: 120px 0;
+    background: #fff;
+}
+
+.empathy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.empathy-card {
+    text-align: center;
+    padding: 40px 24px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 230, 230, 0.5);
+}
+
+.empathy-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.empathy-icon {
+    font-size: 3rem;
+    margin-bottom: 24px;
+}
+
+.empathy-card h3 {
+    margin-bottom: 16px;
+    color: #2C3E50;
+    font-size: 1.3rem;
+}
+
+.empathy-card p {
+    color: #7F8C8D;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.empathy-message {
+    text-align: center;
+    padding: 60px 24px;
+    background: linear-gradient(135deg, rgba(255, 240, 230, 0.6) 0%, rgba(255, 230, 230, 0.6) 100%);
+    border-radius: 24px;
+}
+
+.empathy-message p {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: 500;
+    color: #2C3E50;
+    line-height: 1.8;
+}
+
+/* ========================================
+   Features Section
+======================================== */
+
+.features-section {
+    padding: 120px 0;
+    background: linear-gradient(to bottom, #FFF 0%, #FFF9F5 100%);
+}
+
+.features-content {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.feature-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.feature-item.reverse {
+    direction: rtl;
+}
+
+.feature-item.reverse>* {
+    direction: ltr;
+}
+
+.feature-image {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+    aspect-ratio: 4 / 3;
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.feature-item:hover .feature-image img {
+    transform: scale(1.05);
+}
+
+.feature-text {
+    padding: 24px;
+}
+
+.feature-number {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FF9A8B;
+    margin-bottom: 16px;
+    letter-spacing: 0.1em;
+}
+
+.feature-text h3 {
+    margin-bottom: 20px;
+    color: #2C3E50;
+}
+
+.feature-text p {
+    color: #5D6D7E;
+    line-height: 1.9;
+}
+
+/* ========================================
+   Benefits Section
+======================================== */
+
+.benefits-section {
+    padding: 120px 0;
+    background: #fff;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 48px;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 48px 32px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 230, 230, 0.5);
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.benefit-card h3 {
+    margin-bottom: 20px;
+    color: #2C3E50;
+    font-size: 1.4rem;
+}
+
+.benefit-card p {
+    color: #7F8C8D;
+    line-height: 1.9;
+}
+
+/* ========================================
+   Lifestyle Section
+======================================== */
+
+.lifestyle-section {
+    padding: 120px 0;
+    background: linear-gradient(to bottom, #FFF9F5 0%, #FFF 100%);
+}
+
+.lifestyle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.lifestyle-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+}
+
+.lifestyle-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.lifestyle-image {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+
+.lifestyle-image img,
+.lifestyle-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.lifestyle-image.video-container {
+    height: auto;
+    aspect-ratio: auto;
+    position: relative;
+}
+
+.lifestyle-image.video-container .lifestyle-overlay {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2));
+}
+
+.video-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.video-play-icon svg {
+    width: 32px;
+    height: 32px;
+    color: #FF9A8B;
+    margin-left: 4px;
+    /* アイコンの視覚的な中心調整 */
+}
+
+/* 動画が再生中のスタイル */
+/* 親要素に .playing クラスがつくとアイコンが消える */
+.lifestyle-image.video-container.playing .video-play-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.lifestyle-card:hover .video-play-icon {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.lifestyle-image.video-container.playing:hover .video-play-icon {
+    opacity: 0;
+    /* 再生中はホバーしても表示しない */
+}
+
+.lifestyle-card:hover .lifestyle-image img {
+    transform: scale(1.1);
+}
+
+.lifestyle-card:hover .lifestyle-image video {
+    transform: none;
+}
+
+.lifestyle-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+}
+
+.lifestyle-time {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.lifestyle-card h3 {
+    padding: 24px 24px 12px;
+    color: #2C3E50;
+    font-size: 1.3rem;
+}
+
+.lifestyle-card p {
+    padding: 0 24px 32px;
+    color: #7F8C8D;
+    line-height: 1.8;
+}
+
+/* ========================================
+   Message Section
+======================================== */
+
+.message-section {
+    padding: 120px 0;
+    background: linear-gradient(135deg, rgba(255, 154, 139, 0.05) 0%, rgba(255, 230, 230, 0.1) 100%);
+}
+
+.message-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* .message-image 関連のスタイルは削除 */
+
+.message-text h2 {
+    margin-bottom: 32px;
+    color: #5D4037;
+}
+
+.message-intro {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #34495E;
+    margin-bottom: 32px;
+    line-height: 1.9;
+}
+
+.message-text p {
+    margin-bottom: 24px;
+    color: #5D6D7E;
+    line-height: 2;
+}
+
+.message-signature {
+    margin-top: 48px;
+    font-style: italic;
+    color: #7F8C8D;
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   CTA Section
+======================================== */
+
+.cta-section {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #FF9A8B 0%, #FF6A88 100%);
+    color: #fff;
+    text-align: center;
+}
+
+.cta-content h2 {
+    margin-bottom: 24px;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.cta-content>p {
+    font-size: 1.2rem;
+    margin-bottom: 48px;
+    font-weight: 300;
+    line-height: 1.9;
+}
+
+.cta-button-large {
+    display: inline-block;
+    padding: 24px 64px;
+    background: #fff;
+    color: #FF6A88;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button-large:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+}
+
+.cta-note {
+    margin-top: 24px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* ========================================
+   Footer
+======================================== */
+
+.footer {
+    padding: 48px 0;
+    background: #3E2723;
+    color: #EFEBE9;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ========================================
+   Scroll Animations
+======================================== */
+
+.scroll-fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================
+   Responsive Design
+======================================== */
+
+@media (max-width: 968px) {
+
+    .feature-item,
+    .feature-item.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 40px;
+    }
+
+    .message-content {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .message-image {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 500px;
+    }
+
+    .empathy-section,
+    .features-section,
+    .benefits-section,
+    .lifestyle-section,
+    .message-section,
+    .cta-section {
+        padding: 80px 0;
+    }
+
+    .section-header {
+        margin-bottom: 48px;
+    }
+
+    .empathy-grid,
+    .benefits-grid,
+    .lifestyle-grid {
+        gap: 32px;
+    }
+
+    .features-content {
+        gap: 60px;
+    }
+
+    .cta-button-large {
+        padding: 20px 48px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 14px 32px;
+        font-size: 1rem;
+    }
+
+    .empathy-card,
+    .benefit-card {
+        padding: 32px 20px;
+    }
+
+    .feature-text {
+        padding: 16px;
+    }
+}
