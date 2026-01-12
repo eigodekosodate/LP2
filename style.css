@@ -857,15 +857,29 @@ h3 {
     }
 
     .hero-section {
-        height: auto;
-        min-height: 100svh;
-        padding-top: 140px;
-        padding-bottom: 80px;
+        height: 100svh;
+        /* 固定高さに変更して画像の見え方を安定させる */
+        min-height: 560px;
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+
+    .hero-section::before {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+    }
+
+    .hero-overlay {
+        background: none;
+        backdrop-filter: none;
+    }
+
+    .hero-content {
+        padding: 0 10px;
     }
 
     .hero-title {
-        font-size: 26px;
-        line-height: 1.6;
+        font-size: 24px;
+        line-height: 1.5;
     }
 
     .hero-subtitle {
