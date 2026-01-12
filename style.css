@@ -241,6 +241,8 @@ h3 {
 .empathy-section {
     padding: 120px 0;
     background: #fff;
+    position: relative;
+    z-index: 10;
 }
 
 .empathy-grid {
@@ -719,8 +721,57 @@ h3 {
     }
 
     .cta-button-large {
-        padding: 20px 48px;
-        font-size: 1.1rem;
+        padding: 16px 40px;
+        font-size: 1rem;
+    }
+
+    .hero-section {
+        height: auto;
+        min-height: 100svh;
+        padding-top: 140px;
+        padding-bottom: 80px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .feature-item {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-item.reverse {
+        direction: ltr;
+    }
+
+    .feature-text {
+        padding: 24px;
+    }
+
+    .message-content {
+        text-align: left;
+    }
+
+    .message-intro {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .message-text p {
+        font-size: 0.95rem;
+        line-height: 1.9;
+    }
+
+    .pc-br {
+        display: none;
+    }
+
+    .sp-br {
+        display: block;
     }
 }
 
