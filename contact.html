@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | 英語de子育て</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-section {
+            padding: 180px 0 120px;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255, 154, 139, 0.1) 0%, rgba(255, 106, 136, 0.1) 100%);
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 1);
+            box-shadow: 0 20px 60px rgba(255, 154, 139, 0.15);
+            border-radius: 40px;
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            margin: 0 24px;
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 24px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            margin-top: 32px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #FF6A88;
+            padding: 16px 32px;
+            background: #FFF0F0;
+            border-radius: 100px;
+            transition: all 0.3s ease;
+            word-break: break-all;
+        }
+
+        .contact-email:hover {
+            background: #FF6A88;
+            color: #fff;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(255, 106, 136, 0.2);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: #8D6E63;
+            font-size: 0.9rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .back-link:hover {
+            border-bottom-color: #8D6E63;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header (Simple) -->
+    <header style="position: absolute; top: 0; left: 0; width: 100%; padding: 24px; text-align: center; z-index: 100;">
+        <a href="index.html"
+            style="font-family: 'Zen Maru Gothic', sans-serif; font-weight: 700; font-size: 1.2rem; color: #5D4037;">英語de子育て</a>
+    </header>
+
+    <section class="contact-section">
+        <div class="contact-card">
+            <div class="contact-icon">✉️</div>
+            <h1 style="font-size: 2rem; margin-bottom: 24px; color: #5D4037;">お問い合わせ</h1>
+            <p style="color: #7F8C8D; line-height: 1.8;">
+                商品に関するご質問やご相談は、<br>
+                下記メールアドレスまでお気軽にお送りください。
+            </p>
+
+            <a href="mailto:eigodekosodatesale@gmail.com" class="contact-email">
+                eigodekosodatesale@gmail.com
+            </a>
+
+            <div>
+                <a href="index.html" class="back-link">← トップページに戻る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright(C) 英語de子育て　All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
