@@ -150,6 +150,13 @@ h3 {
     color: #fff;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     line-height: 1.4;
+    width: 100%;
+}
+
+.hero-title span,
+.hero-subtitle span {
+    display: inline-block;
+    white-space: nowrap;
 }
 
 /* PC-only line break utility - redefined here to be safe */
@@ -874,13 +881,14 @@ h3 {
     }
 
     .hero-content {
-        padding: 0 10px;
+        padding: 0 20px;
+        width: 100%;
     }
 
     .hero-title {
         font-size: 1.8rem;
         line-height: 1.5;
-        padding: 0 10px;
+        margin-bottom: 24px;
     }
 
     .hero-title span,
@@ -934,11 +942,12 @@ h3 {
     }
 
     .hero-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        word-break: break-word;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .cta-button {
