@@ -1,4 +1,4 @@
-/* ========================================
+﻿/* ========================================
    Reset & Base Styles
 ======================================== */
 
@@ -946,5 +946,294 @@ h3 {
 
     .feature-text {
         padding: 16px;
+    }
+}
+
+/* ========================================
+   Testimonials Section
+======================================== */
+
+.testimonials-section {
+    padding: 140px 0;
+    background: linear-gradient(135deg, #FFF9F5 0%, #FFF 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials-decoration {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: 0;
+    opacity: 0.4;
+}
+
+.deco-1 {
+    width: 300px;
+    height: 300px;
+    background: #FF9A8B;
+    top: -100px;
+    right: -100px;
+}
+
+.deco-2 {
+    width: 250px;
+    height: 250px;
+    background: #FFCC80;
+    bottom: -50px;
+    left: -50px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 48px;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 60px 40px 48px;
+    border-radius: 40px;
+    box-shadow: 0 20px 50px rgba(255, 154, 139, 0.12);
+    border: 2px solid #fff;
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 70px rgba(255, 154, 139, 0.25);
+    background: #fff;
+}
+
+.quote-icon {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    color: rgba(255, 154, 139, 0.2);
+}
+
+.user-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.user-badge {
+    display: inline-block;
+    padding: 6px 20px;
+    background: linear-gradient(135deg, #FF9A8B 0%, #FF6A88 100%);
+    color: #fff;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(255, 106, 136, 0.2);
+}
+
+.star-rating {
+    color: #FFB74D;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.user-name {
+    color: #5D4037;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.testimonial-content p {
+    color: #5D6D7E;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.testimonial-content p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .testimonials-section {
+        padding: 100px 0;
+    }
+
+    .testimonial-card {
+        padding: 48px 24px 32px;
+    }
+
+    .user-name {
+        font-size: 1.35rem;
+    }
+
+    .quote-icon {
+        width: 32px;
+        height: 32px;
+        top: 20px;
+        right: 20px;
+    }
+}
+/* ========================================
+   Picture Book Section
+======================================== */
+
+.picture-book-section {
+    padding: 120px 0;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.picture-book-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.book-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.book-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 4 / 3;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.book-page {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: rotateY(20deg) translateX(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #fff;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.book-page.active {
+    opacity: 1;
+    transform: rotateY(0) translateX(0);
+    pointer-events: auto;
+    z-index: 2;
+}
+
+.book-page img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #f9f9f9;
+}
+
+.click-hint {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    background: #FF6A88;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(255, 106, 136, 0.4);
+    z-index: 10;
+    animation: bounce-hint 2s infinite;
+    pointer-events: none;
+}
+
+.hint-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.click-hint span {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+@keyframes bounce-hint {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.book-pagination {
+    display: flex;
+    gap: 8px;
+}
+
+.book-pagination .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #E0E0E0;
+    transition: all 0.3s ease;
+}
+
+.book-pagination .dot.active {
+    background: #FF9A8B;
+    transform: scale(1.3);
+}
+
+.picture-book-text {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.picture-book-text .text-block p {
+    color: #5D6D7E;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.picture-book-text .text-block p:last-child {
+    margin-bottom: 0;
+}
+
+.picture-book-text strong {
+    color: #5D4037;
+    background: linear-gradient(transparent 70%, #FFE0B2 70%);
+}
+
+@media (max-width: 968px) {
+    .picture-book-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .picture-book-text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .picture-book-section {
+        padding: 80px 0;
     }
 }
