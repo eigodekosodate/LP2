@@ -241,35 +241,39 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // ========================================
+    // Picture Book Page Flipper
+    // ========================================
+
+    const bookContainer = document.getElementById('book-flipper');
+    if (bookContainer) {
+        const pages = bookContainer.querySelectorAll('.book-page');
+        const dots = document.querySelectorAll('.book-pagination .dot');
+        let currentPage = 0;
+
+        bookContainer.addEventListener('click', () => {
+            if (pages.length === 0) return;
+
+            // 現在のページを非アクティブにする
+            pages[currentPage].classList.remove('active');
+            if (dots[currentPage]) dots[currentPage].classList.remove('active');
+
+            // 次のページへ
+            currentPage = (currentPage + 1) % pages.length;
+
+            // 次のページをアクティブにする
+            pages[currentPage].classList.add('active');
+            if (dots[currentPage]) dots[currentPage].classList.add('active');
+
+            // めくり効果の演出（少し揺らす）
+            bookContainer.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                bookContainer.style.transform = 'scale(1)';
+            }, 150);
+        });
+    }
+
     console.log('🎉 Landing page initialized successfully!');
 });
 
-// ========================================
-// Picture Book Page Flipper
-// ========================================
 
-const bookContainer = document.getElementById('book-flipper');
-if (bookContainer) {
-    const pages = bookContainer.querySelectorAll('.book-page');
-    const dots = document.querySelectorAll('.book-pagination .dot');
-    let currentPage = 0;
-
-    bookContainer.addEventListener('click', () => {
-        // 現在のページを非アクティブにする
-        pages[currentPage].classList.remove('active');
-        dots[currentPage].classList.remove('active');
-
-        // 次のページへ
-        currentPage = (currentPage + 1) % pages.length;
-
-        // 次のページをアクティブにする
-        pages[currentPage].classList.add('active');
-        dots[currentPage].classList.add('active');
-        
-        // めくり効果の演出（少し揺らす）
-        bookContainer.style.transform = 'scale(0.98)';
-        setTimeout(() => {
-            bookContainer.style.transform = 'scale(1)';
-        }, 150);
-    });
-}
