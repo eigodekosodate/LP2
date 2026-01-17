@@ -274,6 +274,38 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // ========================================
+    // Floating CTA Visibility
+    // ========================================
+
+    const floatingCta = document.querySelector('.floating-cta');
+    const heroSectionForCta = document.querySelector('.hero-section');
+    const ctaSection = document.getElementById('cta');
+
+    if (floatingCta && heroSectionForCta) {
+        window.addEventListener('scroll', () => {
+            const heroHeight = heroSectionForCta.offsetHeight;
+            const scrollPos = window.pageYOffset;
+            const windowHeight = window.innerHeight;
+            const bodyHeight = document.body.offsetHeight;
+
+            // ヒーローセクションを過ぎたら表示、フッター前のCTAセクションに到達したら非表示
+            const isPastHero = scrollPos > heroHeight - 100;
+            let isNearBottomCta = false;
+
+            if (ctaSection) {
+                const ctaTop = ctaSection.offsetTop;
+                isNearBottomCta = scrollPos + windowHeight > ctaTop + 100;
+            }
+
+            if (isPastHero && !isNearBottomCta) {
+                floatingCta.classList.add('visible');
+            } else {
+                floatingCta.classList.remove('visible');
+            }
+        });
+    }
+
     console.log('🎉 Landing page initialized successfully!');
 });
 
