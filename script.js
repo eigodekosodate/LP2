@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Intersection Observer for scroll animations
     const observerOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -100px 0px'
+        threshold: 0.05,
+        rootMargin: '0px'
     };
 
     const observer = new IntersectionObserver(function (entries) {
@@ -251,7 +251,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const dots = document.querySelectorAll('.book-pagination .dot');
         let currentPage = 0;
 
-        bookContainer.addEventListener('click', () => {
+        bookContainer.addEventListener('click', (e) => {
+            e.preventDefault();
             if (pages.length === 0) return;
 
             // 現在のページを非アクティブにする
@@ -269,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function () {
             bookContainer.style.transform = 'scale(0.98)';
             setTimeout(() => {
                 bookContainer.style.transform = 'scale(1)';
-            }, 150);
+            }, 100);
         });
     }
 
